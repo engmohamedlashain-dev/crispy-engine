@@ -11,5 +11,14 @@ abstract final class AppAssest {
   static const String icVector = "assets/images/ic_time.png";
   static const String logo = "assets/images/img_header.png";
   static const String rectangle = "assets/images/Rectangle.png";
-  static const String splashScreen = "assets/images/Splash_Screen.png";
+  String splashScreen = "assets/images/Splash_Screen.png";
+
+  static const String prifxIcon = "assets/images/quran-svgrepo-com 1.png";
+
+  static const String imgmostrecent = "assets/images/img_most_recent.png";
+  static const String souraFrame = "assets/images/img_sur_number_frame.png";
+
+
+
 }
+
