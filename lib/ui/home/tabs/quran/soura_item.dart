@@ -27,6 +27,7 @@ class SouraItem extends StatelessWidget {
 
          Text("${index+1}",style: TextStyle(
            color: Colors.white
+
          ),),
        ],
          ),
@@ -37,8 +38,7 @@ class SouraItem extends StatelessWidget {
 
                 Text(QuranResource.quranSurahsEnglish[index],
                     style: AppTextStyle.whitebold20),
-                 Text('Verses ${QuranResource.quranSurahVerses[index]}'
-    ,style: AppTextStyle.whitebold14),
+                 Text('Verses ${QuranResource.quranSurahVerses[index]}',style: AppTextStyle.whitebold14),
 
 
             ],
