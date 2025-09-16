@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:islamic/home/home_page.dart';
+import 'package:islamic/ui/home/home_page.dart';
+import 'package:islamic/ui/home/tabs/quran/details_soura.dart';
+import 'package:islamic/ui/home/tabs/quran/sura_content.dart';
+import 'package:islamic/utilts/app_theme.dart';
 
 void main() {
   runApp( MyApp());
@@ -12,11 +15,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
 
      initialRoute: HomePage.routeName,
       routes: {
        HomePage.routeName:(context)=>HomePage(),
+        DetailsSoura.routeName:(context)=>DetailsSoura(),
+
       },
+    darkTheme: AppTheme.darkTheme,
+      themeMode: ThemeMode.dark,
     );
   }
 }

@@ -5,8 +5,6 @@ class Ahadeth extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder(
-      child: Text('ahadeth'),
-    );
+    return const Placeholder();
   }
 }
