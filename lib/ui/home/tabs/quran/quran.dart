@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islamic/ui/home/tabs/quran/details_soura.dart';
 import 'package:islamic/ui/home/tabs/quran/soura_item.dart';
 import 'package:islamic/utilts/app_assets.dart';
 import 'package:islamic/utilts/app_color.dart';
@@ -128,9 +129,15 @@ crossAxisAlignment: CrossAxisAlignment.start,
           Expanded(child: Container(
 
             child: ListView.separated(
-padding: EdgeInsets.zero,
+          padding: EdgeInsets.zero,
+
                 itemBuilder: (context, index) {
-                  return SouraItem(index: index,);
+                  return InkWell(
+                      onTap: () {
+                        Navigator.of(context).pushNamed(DetailsSoura.routeName,arguments: index);
+                      },
+
+                      child: SouraItem(index: index));
                 },
                 separatorBuilder: (context, index) {
             return Divider(

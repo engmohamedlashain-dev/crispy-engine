@@ -18,6 +18,11 @@ abstract final class AppAssest {
   static const String imgmostrecent = "assets/images/img_most_recent.png";
   static const String souraFrame = "assets/images/img_sur_number_frame.png";
 
+  static const String rightcorner = "assets/images/img_right_corner.png";
+  static const String leftcorner = "assets/images/img_left_corner.png";
+  static const String bottomcorner = "assets/images/img_bottom_decoration.png";
+
+
 
 
 }
