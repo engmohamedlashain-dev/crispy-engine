@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:islamic/shared_prefrance/shared_pref.dart';
 import 'package:islamic/ui/home/tabs/quran/details_soura.dart';
+import 'package:islamic/ui/home/tabs/quran/most_recent.dart';
 import 'package:islamic/ui/home/tabs/quran/quran_resource.dart';
 import 'package:islamic/ui/home/tabs/quran/soura_item.dart';
 import 'package:islamic/utilts/app_assets.dart';
@@ -65,47 +67,8 @@ class _QuranState extends State<Quran> {
           SizedBox(height: height * .01),
 
           /// Most Recently
-          Text(
-            "Most Recently ",
-            style: TextStyle(color: AppColor.white),
-          ),
-          SizedBox(height: height * .01),
-          SizedBox(
-            width: double.infinity,
-            height: height * 0.18,
-            child: ListView.separated(
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                return Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: width * .04,
-                  ),
-                  decoration: BoxDecoration(
-                    color: AppColor.gold,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Row(
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Al-Anbiya", style: AppTextStyle.black24),
-                          Text("الأنبياء", style: AppTextStyle.black24),
-                          Text("112 Verses", style: AppTextStyle.black14),
-                        ],
-                      ),
-                      Image.asset(AppAssest.imgmostrecent),
-                    ],
-                  ),
-                );
-              },
-              separatorBuilder: (context, index) =>
-                  SizedBox(width: width * .02),
-              itemCount: 10,
-            ),
-          ),
-          SizedBox(height: height * .01),
+
+          MostRecent(),
 
           /// Suras List
           Text(
@@ -120,6 +83,8 @@ class _QuranState extends State<Quran> {
               itemBuilder: (context, index) {
                 return InkWell(
                   onTap: () {
+                    // todo:save last sura index in share prefranc
+                    saveNewSouraList(filterList[index]);
                     Navigator.of(context).pushNamed(
                       DetailsSoura.routeName,
                       arguments: filterList[index],
@@ -144,17 +109,18 @@ class _QuranState extends State<Quran> {
   }
 
   void searchByNewText(String newtext) {
-    List<int> filterserchlist = [];
-    for (var i = 0; i < QuranResource.quranSurahs.length; i++) {
-      if (QuranResource.quranSurahsEnglish[i].toLowerCase().contains(newtext.toLowerCase())) {
-        filterserchlist.add(i);
-      }
-      if (QuranResource.quranSurahs[i].toLowerCase().contains(newtext.toLowerCase())) {
-        filterserchlist.add(i);
-      }
+    if (newtext.isEmpty) {
+      filterList = List.generate(114, (index) => index);
+    } else {
+      final query = newtext.toLowerCase();
+
+      filterList = List.generate(114, (index) => index)
+          .where((i) =>
+              QuranResource.quranSurahs[i].toLowerCase().contains(query) ||
+              QuranResource.quranSurahsEnglish[i].toLowerCase().contains(query))
+          .toList();
     }
-    filterList = filterserchlist;
+
     setState(() {});
   }
 }
-
