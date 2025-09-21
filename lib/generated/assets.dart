@@ -5,8 +5,6 @@ class Assets {
   static const String files1 = 'assets/files/1.txt';
   static const String files2 = 'assets/files/2.txt';
   static const String files3 = 'assets/files/3.txt';
-  static const String filesNew Microsoft Word Document = 'assets/files/New Microsoft Word Document.docx';
-  static const String files~$w Microsoft Word Document = 'assets/files/~$w Microsoft Word Document.docx';
   static const String imagesAhdethBackground = 'assets/images/ahdeth-Background.png';
   static const String imagesBackground = 'assets/images/Background.png';
   static const String imagesBackgroundTime = 'assets/images/BackgroundTime.png';
@@ -16,7 +14,9 @@ class Assets {
   static const String imagesIcRadio = 'assets/images/ic_radio.png';
   static const String imagesIcSebha = 'assets/images/ic_sebha.png';
   static const String imagesIcTime = 'assets/images/ic_time.png';
+  static const String imagesImgBottomDecoration = 'assets/images/img_bottom_decoration.png';
   static const String imagesImgHeader = 'assets/images/img_header.png';
+  static const String imagesImgLeftCorner = 'assets/images/img_left_corner.png';
   static const String imagesImgMostRecent = 'assets/images/img_most_recent.png';
   static const String imagesImgRightCorner = 'assets/images/img_right_corner.png';
   static const String imagesImgSurNumberFrame = 'assets/images/img_sur_number_frame.png';
